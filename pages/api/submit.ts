@@ -5,12 +5,6 @@ type Data = {
   data: any;
 };
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  if (req.method === "POST") {
-    res.status(200).json({ data: req.body });
-  } else {
-  }
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  res.status(200).json({ data: req.body, req });
 }
