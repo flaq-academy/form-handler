@@ -6,7 +6,8 @@ type Data = {
 };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log(req.body);
-  console.log(req);
-  res.status(200).json({ data: JSON.parse(req.body) });
+  const { test } = req.body;
+  res.status(200).json({
+    data: test,
+  });
 }
